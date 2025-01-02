@@ -60,7 +60,7 @@ const Quiz = () => {
         {/* Coin Display with Animation */}
     
           <Typography variant="h6" className="animate-bounce">
-          <Money className='animate-bounce'/> $ {coins}
+          <Money className='animate-bounce'/> ${coins}
           </Typography>
        
       </Box>
