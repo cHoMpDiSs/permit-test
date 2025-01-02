@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import quizData from './quizData';
 import { Button, Radio, RadioGroup, FormControlLabel, FormControl, Box, Typography } from '@mui/material';
-import { motion } from 'framer-motion';
+import { Money } from "@mui/icons-material";
 
 const Quiz = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -53,27 +53,20 @@ const Quiz = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-4 bg-slate-600  rounded-lg shadow-lg">
-      <Typography variant="h4" className="text-center mb-6 text-white"></Typography>
+    <div className="max-w-2xl mx-auto p-4  bg-white text-black rounded-lg shadow-lg">
+      <Typography variant="h4" className="text-center mb-6 text-black"></Typography>
 
       <Box className="mb-6">
         {/* Coin Display with Animation */}
-        <motion.div
-          key={coins} // Trigger animation when coins change
-          initial={{ scale: 0 }}
-          animate={{ scale: 1.5 }}
-          exit={{ scale: 0 }}
-          transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
-          className="flex justify-center items-center mb-4"
-        >
-          <Typography variant="h6" className="text-white">
-            $ {coins}
+    
+          <Typography variant="h6" className="animate-bounce">
+          <Money className='animate-bounce'/> $ {coins}
           </Typography>
-        </motion.div>
+       
       </Box>
 
       <Box className="mb-6">
-        <Typography variant="h6" className="text-lg mb-2 text-white">{quizData[currentQuestionIndex].question}</Typography>
+        <Typography variant="h6" className="text-lg mb-2 ">{quizData[currentQuestionIndex].question}</Typography>
         <FormControl component="fieldset" className="w-full">
           <RadioGroup
             value={selectedOption}
@@ -85,7 +78,7 @@ const Quiz = () => {
                 value={option}
                 control={<Radio />}
                 label={option}
-                className="mb-3 text-white"
+                className="mb-3 "
               />
             ))}
           </RadioGroup>
@@ -108,7 +101,7 @@ const Quiz = () => {
       )}
 
       <div className="mt-4 text-center">
-        <Typography variant="body2" className="text-white">
+        <Typography variant="body2" className="">
           Question {currentQuestionIndex + 1} of {quizData.length}
         </Typography>
       </div>

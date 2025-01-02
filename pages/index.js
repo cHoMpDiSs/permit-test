@@ -15,17 +15,21 @@ const geistMono = Geist_Mono({
 
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-           <Typography variant="h9" className="text-6xl mb-2">Ali Permit Test</Typography>
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-    <Quiz/>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-      
-      
-      </footer>
-    </div>
+    <div className="mx-auto sm:max-w-4xl md:max-w-4xl">
+    <main className="text-center">
+      <div className="mt-20">
+        <div className="mt-4">
+        <p className="text-6xl  xl:text-8xl lg:text-7xl mb-10 text-center mx-auto">
+        Ali Permit Test
+      </p>
+        </div>
+
+      </div>
+  
+      <Quiz />
+    </main>
+  </div>
+  
+  
   );
 }
